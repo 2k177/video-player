@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+
+const videos = {
+  deer: "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-fast.mp4",
+  snail:
+    "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-slow.mp4",
+  cat: "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-cute.mp4",
+  spider:
+    "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-eek.mp4",
+};
+
+const videoNames = Object.keys(videos);
+// console.log(videoNames);
+
+const videoNamesList = ["deer", "snail", "spider", "cat"];
 
 function App() {
+  const [videoSrc, setVideoSrc] = useState("");
+
+  function onRadioSelect(ev) {
+    setVideoSrc(ev.target.value);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Video player</h1>
+      <div>
+        {videoNames.map((value, i) => (
+          <div key={i} className="video-inputs">
+            <input
+              onChange={onRadioSelect}
+              key={i}
+              type="radio"
+              name="src"
+              value={value}
+            />
+            {value}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
