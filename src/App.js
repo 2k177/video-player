@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import Video from "./Video.js";
 
 const videos = {
   deer: "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-fast.mp4",
@@ -11,9 +12,6 @@ const videos = {
 };
 
 const videoNames = Object.keys(videos);
-// console.log(videoNames);
-
-const videoNamesList = ["deer", "snail", "spider", "cat"];
 
 function App() {
   const [videoSrc, setVideoSrc] = useState("");
@@ -37,6 +35,7 @@ function App() {
             {value}
           </div>
         ))}
+        <Video videoSrc={videos[videoSrc]} />
       </div>
     </div>
   );
