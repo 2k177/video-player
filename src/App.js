@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles.css";
 import { useState } from "react";
 import Video from "./Video.js";
 

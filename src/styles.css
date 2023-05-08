@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+.video-inputs {
+  display: inline-block;
+}
+
+input {
+  font-size: 16px;
+}
+
+video {
+  margin: 30px;
+  width: 500px;
+  max-width: 85%;
+}
+
+body {
+  margin: 0;
+  background-color: #282c34;
+  text-align: center;
+  justify-content: flex-start;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
